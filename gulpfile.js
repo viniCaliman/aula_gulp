@@ -1,3 +1,5 @@
+const gulp = require('gulp');
+
 function print(callback) {
     console.log("Executando via Gulp");
     callback();
@@ -13,5 +15,4 @@ function dizerTchau(){
     console.log("Tchau Gulp");
 }
 
-exports.default = print;
-exports.ola = dizerOi;
+exports.default = gulp.series(print, dizerOi);
