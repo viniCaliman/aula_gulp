@@ -1,8 +1,11 @@
 const gulp = require('gulp');
 
 function print(callback) {
-    console.log("Executando via Gulp");
-    callback();
+    setTimeout(() => {
+        console.log("Executando via Gulp");
+        callback();
+    }, 2000)
+        
 }
 
 function dizerOi(callback){
@@ -15,4 +18,4 @@ function dizerTchau(){
     console.log("Tchau Gulp");
 }
 
-exports.default = gulp.series(print, dizerOi);
+exports.default = gulp.parallel(print, dizerOi);
